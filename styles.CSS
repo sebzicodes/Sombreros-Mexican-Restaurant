@@ -1,0 +1,176 @@
+/* =============================================
+   SOMBREROS MEXICAN RESTAURANT — Base Styles
+   Mobile-first, desktop via min-width queries
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #222;
+  background-color: #fff;
+}
+
+/* --- Header & Nav --- */
+
+#sombreros-site-header {
+  background-color: #8b0000;
+  color: #fff;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#sombreros-main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+#sombreros-nav-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+#sombreros-mobile-menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+#sombreros-nav-links {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  background-color: #8b0000;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+#sombreros-nav-links.sombreros-nav-open {
+  display: flex;
+}
+
+#sombreros-nav-links li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+#sombreros-nav-links li a:hover {
+  background-color: #6b0000;
+}
+
+/* --- Hero Banner --- */
+
+#sombreros-hero-banner {
+  background-color: #f5e6c8;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+#sombreros-hero-heading {
+  font-size: 2rem;
+  color: #8b0000;
+  margin-bottom: 0.5rem;
+}
+
+#sombreros-hero-subheading {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* --- Shared Section Styles --- */
+
+#sombreros-menu-section,
+#sombreros-hours-section,
+#sombreros-contact-section {
+  padding: 2.5rem 1.5rem;
+}
+
+#sombreros-hours-section {
+  background-color: #fafafa;
+}
+
+.sombreros-section-title {
+  font-size: 1.5rem;
+  color: #8b0000;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 0.25rem;
+}
+
+/* --- Footer --- */
+
+#sombreros-site-footer {
+  background-color: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* =============================================
+   TABLET — 768px+
+   ============================================= */
+
+@media (min-width: 768px) {
+  #sombreros-mobile-menu-toggle {
+    display: none;
+  }
+
+  #sombreros-nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    padding: 0;
+  }
+
+  #sombreros-nav-links li a {
+    padding: 0 1rem;
+  }
+
+  #sombreros-hero-heading {
+    font-size: 2.75rem;
+  }
+
+  #sombreros-hero-subheading {
+    font-size: 1.15rem;
+  }
+}
+
+/* =============================================
+   DESKTOP — 1024px+
+   ============================================= */
+
+@media (min-width: 1024px) {
+  #sombreros-hero-banner {
+    padding: 5rem 2rem;
+  }
+
+  #sombreros-hero-heading {
+    font-size: 3.5rem;
+  }
+
+  #sombreros-menu-section,
+  #sombreros-hours-section,
+  #sombreros-contact-section {
+    padding: 4rem 6rem;
+  }
+}
