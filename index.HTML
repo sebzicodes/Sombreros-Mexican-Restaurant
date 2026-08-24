@@ -3,43 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sombreros Mexican Restaurant</title>
-  <link rel="stylesheet" href="styles.CSS" />
+  <title>Sombreros Mexican Restaurant | Authentic Mexican Flavor</title>
+  <meta name="description" content="Sombreros Mexican Restaurant serves handcrafted, authentic Mexican food made fresh daily. View our menu, hours, location, and contact info." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <a href="#sombreros-main-content" id="sombreros-skip-link">Skip to main content</a>
+
   <header id="sombreros-site-header">
-    <nav id="sombreros-main-nav">
-      <div id="sombreros-nav-logo">Sombreros</div>
-      <button id="sombreros-mobile-menu-toggle" aria-label="Open menu">&#9776;</button>
-      <ul id="sombreros-nav-links">
-        <li><a href="#sombreros-hero-banner">Home</a></li>
-        <li><a href="#sombreros-menu-section">Menu</a></li>
-        <li><a href="#sombreros-hours-section">Hours</a></li>
-        <li><a href="#sombreros-contact-section">Contact</a></li>
-      </ul>
-    </nav>
+    <div id="sombreros-header-bar">
+      <button
+        id="sombreros-bento-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sombreros-side-nav"
+        aria-label="Open Sombreros Mexican Restaurant navigation menu"
+      >
+        <span class="sombreros-bento-icon" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <a href="#sombreros-page-home" id="sombreros-nav-logo" data-sombreros-route="home">Sombreros</a>
+    </div>
   </header>
 
-  <main>
+  <div id="sombreros-side-nav-overlay" hidden></div>
 
-    <section id="sombreros-hero-banner">
-      <h1 id="sombreros-hero-heading">Authentic Mexican Flavor</h1>
-      <p id="sombreros-hero-subheading">Handcrafted food made fresh daily in [City, State]</p>
+  <nav id="sombreros-side-nav" aria-label="Primary" inert>
+    <div id="sombreros-side-nav-header">
+      <span id="sombreros-side-nav-title">Menu</span>
+      <button id="sombreros-side-nav-close" type="button" aria-label="Close navigation menu">&times;</button>
+    </div>
+    <ul id="sombreros-side-nav-links">
+      <li><a href="#sombreros-page-home" data-sombreros-route="home">Home</a></li>
+      <li><a href="#sombreros-page-menu" data-sombreros-route="menu">Menu</a></li>
+      <li><a href="#sombreros-page-hours" data-sombreros-route="hours">Hours &amp; Location</a></li>
+      <li><a href="#sombreros-page-contact" data-sombreros-route="contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main id="sombreros-main-content">
+
+    <section id="sombreros-page-home" class="sombreros-page" data-sombreros-page="home">
+      <div id="sombreros-hero-banner">
+        <h1 id="sombreros-hero-heading">Authentic Mexican Flavor</h1>
+        <p id="sombreros-hero-subheading">Handcrafted food made fresh daily in [City, State]</p>
+      </div>
     </section>
 
-    <section id="sombreros-menu-section">
-      <h2 class="sombreros-section-title">Our Menu</h2>
+    <section id="sombreros-page-menu" class="sombreros-page" data-sombreros-page="menu" hidden>
+      <h1 class="sombreros-page-heading">Our Menu</h1>
       <!-- Menu items will be added here -->
     </section>
 
-    <section id="sombreros-hours-section">
-      <h2 class="sombreros-section-title">Hours &amp; Location</h2>
+    <section id="sombreros-page-hours" class="sombreros-page" data-sombreros-page="hours" hidden>
+      <h1 class="sombreros-page-heading">Hours &amp; Location</h1>
       <!-- Hours and map will be added here -->
     </section>
 
-    <section id="sombreros-contact-section">
-      <h2 class="sombreros-section-title">Contact Us</h2>
+    <section id="sombreros-page-contact" class="sombreros-page" data-sombreros-page="contact" hidden>
+      <h1 class="sombreros-page-heading">Contact Us</h1>
       <!-- Contact form will be added here -->
     </section>
 
@@ -49,6 +75,6 @@
     <p>&copy; 2026 Sombreros Mexican Restaurant. All rights reserved.</p>
   </footer>
 
-  <script src="Script.JS"></script>
+  <script src="script.js"></script>
 </body>
 </html>
