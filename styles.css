@@ -9,10 +9,21 @@
   padding: 0;
 }
 
+:root {
+  --sombreros-color-void: #140b06;
+  --sombreros-color-obsidian: #1e120a;
+  --sombreros-color-wine: #4a0e1a;
+  --sombreros-color-wine-deep: #2c0710;
+  --sombreros-color-gold: #c9a44c;
+  --sombreros-color-gold-bright: #e0c37a;
+  --sombreros-color-ivory: #ece0c8;
+  --sombreros-color-muted: #b7a58a;
+}
+
 body {
   font-family: Georgia, serif;
-  color: #222;
-  background-color: #fff;
+  color: var(--sombreros-color-ivory);
+  background-color: var(--sombreros-color-void);
 }
 
 body.sombreros-no-scroll {
@@ -26,8 +37,8 @@ body.sombreros-no-scroll {
   top: -100px;
   left: 0;
   z-index: 300;
-  background-color: #fff;
-  color: #8b0000;
+  background-color: var(--sombreros-color-obsidian);
+  color: var(--sombreros-color-gold-bright);
   padding: 0.75rem 1rem;
   font-weight: bold;
   text-decoration: none;
@@ -40,8 +51,8 @@ body.sombreros-no-scroll {
 /* --- Header & Bento Toggle --- */
 
 #sombreros-site-header {
-  background-color: #8b0000;
-  color: #fff;
+  background-color: var(--sombreros-color-wine);
+  color: var(--sombreros-color-ivory);
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -64,7 +75,7 @@ body.sombreros-no-scroll {
   background: none;
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: var(--sombreros-color-ivory);
   cursor: pointer;
 }
 
@@ -90,7 +101,7 @@ body.sombreros-no-scroll {
   font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.05em;
-  color: #fff;
+  color: var(--sombreros-color-gold-bright);
   text-decoration: none;
 }
 
@@ -99,7 +110,7 @@ body.sombreros-no-scroll {
 #sombreros-side-nav-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 150;
 }
 
@@ -110,8 +121,8 @@ body.sombreros-no-scroll {
   height: 100vh;
   width: 80%;
   max-width: 300px;
-  background-color: #8b0000;
-  color: #fff;
+  background-color: var(--sombreros-color-wine);
+  color: var(--sombreros-color-ivory);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -129,7 +140,7 @@ body.sombreros-no-scroll {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(201, 164, 76, 0.25);
 }
 
 #sombreros-side-nav-title {
@@ -144,7 +155,7 @@ body.sombreros-no-scroll {
   background: none;
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: var(--sombreros-color-ivory);
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
@@ -162,18 +173,18 @@ body.sombreros-no-scroll {
 #sombreros-side-nav-links li a {
   display: block;
   padding: 0.9rem 1.25rem;
-  color: #fff;
+  color: var(--sombreros-color-ivory);
   text-decoration: none;
   font-size: 1.05rem;
 }
 
 #sombreros-side-nav-links li a:hover {
-  background-color: #6b0000;
+  background-color: var(--sombreros-color-wine-deep);
 }
 
 #sombreros-side-nav-links li a[aria-current='page'] {
-  background-color: #6b0000;
-  border-left: 4px solid #f5e6c8;
+  background-color: var(--sombreros-color-wine-deep);
+  border-left: 4px solid var(--sombreros-color-gold);
   padding-left: calc(1.25rem - 4px);
   font-weight: bold;
 }
@@ -185,7 +196,7 @@ body.sombreros-no-scroll {
 #sombreros-nav-logo:focus-visible,
 #sombreros-side-nav-links li a:focus-visible,
 #sombreros-skip-link:focus-visible {
-  outline: 3px solid #f5e6c8;
+  outline: 3px solid var(--sombreros-color-gold);
   outline-offset: 2px;
 }
 
@@ -198,14 +209,14 @@ body.sombreros-no-scroll {
 /* --- Hero Banner --- */
 
 #sombreros-hero-banner {
-  background-color: #f5e6c8;
+  background-color: var(--sombreros-color-obsidian);
   text-align: center;
   padding: 3rem 15%;
 }
 
 #sombreros-hero-heading {
   font-size: 2rem;
-  color: #8b0000;
+  color: var(--sombreros-color-gold-bright);
   margin-bottom: 0.5rem;
 }
 
@@ -215,7 +226,7 @@ body.sombreros-no-scroll {
 
 #sombreros-hero-subheading {
   font-size: 1rem;
-  color: #555;
+  color: var(--sombreros-color-muted);
 }
 
 /* --- Home Page: Section Overviews --- */
@@ -227,28 +238,28 @@ body.sombreros-no-scroll {
 
 .sombreros-home-overview-section--drinks,
 .sombreros-home-overview-section--about {
-  background-color: #fafafa;
+  background-color: var(--sombreros-color-obsidian);
 }
 
 .sombreros-home-overview-heading {
   font-size: 1.5rem;
-  color: #8b0000;
+  color: var(--sombreros-color-gold-bright);
   margin: 0 auto 1rem;
   width: fit-content;
-  border-bottom: 2px solid #8b0000;
+  border-bottom: 2px solid var(--sombreros-color-gold);
   padding-bottom: 0.25rem;
 }
 
 .sombreros-home-overview-intro {
-  color: #444;
+  color: var(--sombreros-color-muted);
   max-width: 60ch;
   margin: 0 auto 1.5rem;
 }
 
 .sombreros-home-overview-cta {
   display: inline-block;
-  background-color: #8b0000;
-  color: #fff;
+  background-color: var(--sombreros-color-wine);
+  color: var(--sombreros-color-ivory);
   text-decoration: none;
   font-weight: bold;
   padding: 0.85rem 1.75rem;
@@ -258,13 +269,13 @@ body.sombreros-no-scroll {
 
 .sombreros-home-overview-cta:hover,
 .sombreros-home-overview-cta:focus-visible {
-  background-color: #6b0000;
+  background-color: var(--sombreros-color-wine-deep);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
 }
 
 .sombreros-home-overview-cta:focus-visible {
-  outline: 3px solid #8b0000;
+  outline: 3px solid var(--sombreros-color-gold);
   outline-offset: 3px;
 }
 
@@ -288,26 +299,26 @@ body.sombreros-no-scroll {
 
 #sombreros-page-drinks,
 #sombreros-page-about {
-  background-color: #fafafa;
+  background-color: var(--sombreros-color-obsidian);
 }
 
 .sombreros-content-page-heading {
   font-size: 1.5rem;
-  color: #8b0000;
+  color: var(--sombreros-color-gold-bright);
   margin: 0 auto 1rem;
   width: fit-content;
-  border-bottom: 2px solid #8b0000;
+  border-bottom: 2px solid var(--sombreros-color-gold);
   padding-bottom: 0.25rem;
 }
 
 .sombreros-content-page-intro {
-  color: #444;
+  color: var(--sombreros-color-muted);
   max-width: 60ch;
   margin: 0 auto;
 }
 
 .sombreros-content-page-intro a {
-  color: #8b0000;
+  color: var(--sombreros-color-gold-bright);
   font-weight: bold;
 }
 
@@ -335,7 +346,7 @@ body.sombreros-no-scroll {
   gap: 0.6rem;
   width: 96px;
   text-decoration: none;
-  color: #222;
+  color: var(--sombreros-color-ivory);
   border-radius: 8px;
 }
 
@@ -370,8 +381,8 @@ body.sombreros-no-scroll {
   width: max-content;
   max-width: 160px;
   padding: 0.4rem 0.65rem;
-  background-color: #222;
-  color: #fff;
+  background-color: var(--sombreros-color-gold);
+  color: var(--sombreros-color-void);
   font-size: 0.75rem;
   font-weight: bold;
   text-align: center;
@@ -391,7 +402,7 @@ body.sombreros-no-scroll {
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-bottom-color: #222;
+  border-bottom-color: var(--sombreros-color-gold);
 }
 
 .sombreros-order-online-link:hover .sombreros-order-online-tooltip,
@@ -410,7 +421,7 @@ body.sombreros-no-scroll {
 }
 
 .sombreros-order-online-link:focus-visible {
-  outline: 3px solid #8b0000;
+  outline: 3px solid var(--sombreros-color-gold);
   outline-offset: 4px;
 }
 
@@ -440,14 +451,14 @@ body.sombreros-no-scroll {
 }
 
 #sombreros-page-hours {
-  background-color: #fafafa;
+  background-color: var(--sombreros-color-obsidian);
 }
 
 .sombreros-page-heading {
   font-size: 1.5rem;
-  color: #8b0000;
+  color: var(--sombreros-color-gold-bright);
   margin-bottom: 1rem;
-  border-bottom: 2px solid #8b0000;
+  border-bottom: 2px solid var(--sombreros-color-gold);
   padding-bottom: 0.25rem;
 }
 
@@ -458,8 +469,8 @@ body.sombreros-no-scroll {
 /* --- Footer --- */
 
 #sombreros-site-footer {
-  background-color: #222;
-  color: #aaa;
+  background-color: var(--sombreros-color-void);
+  color: var(--sombreros-color-muted);
   text-align: center;
   padding: 1.25rem 1rem;
   font-size: 0.85rem;
@@ -514,8 +525,8 @@ body.sombreros-no-scroll {
   width: max-content;
   max-width: 160px;
   padding: 0.4rem 0.65rem;
-  background-color: #f5e6c8;
-  color: #222;
+  background-color: var(--sombreros-color-gold);
+  color: var(--sombreros-color-void);
   font-size: 0.75rem;
   font-weight: bold;
   text-align: center;
@@ -535,7 +546,7 @@ body.sombreros-no-scroll {
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top-color: #f5e6c8;
+  border-top-color: var(--sombreros-color-gold);
 }
 
 .sombreros-footer-social-link:hover .sombreros-footer-social-tooltip,
@@ -547,7 +558,7 @@ body.sombreros-no-scroll {
 
 .sombreros-footer-social-link--maps,
 .sombreros-footer-social-link--call {
-  background-color: #8b0000;
+  background-color: var(--sombreros-color-wine);
 }
 
 .sombreros-footer-social-link--yelp {
@@ -559,7 +570,7 @@ body.sombreros-no-scroll {
 }
 
 .sombreros-footer-social-link:focus-visible {
-  outline: 3px solid #f5e6c8;
+  outline: 3px solid var(--sombreros-color-gold);
   outline-offset: 3px;
 }
 
@@ -584,20 +595,20 @@ body.sombreros-no-scroll {
 
 #sombreros-footer-hours-table th {
   text-align: left;
-  color: #f5e6c8;
+  color: var(--sombreros-color-gold-bright);
   font-weight: bold;
 }
 
 #sombreros-footer-hours-table td {
   text-align: right;
-  color: #aaa;
+  color: var(--sombreros-color-muted);
 }
 
 #sombreros-footer-invitation {
   max-width: 32rem;
   margin: 0 auto 1.25rem;
   font-style: italic;
-  color: #f5e6c8;
+  color: var(--sombreros-color-gold-bright);
   line-height: 1.5;
 }
 
