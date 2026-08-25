@@ -10,6 +10,26 @@
       title: 'Sombreros Mexican Restaurant | Authentic Mexican Flavor',
       description: 'Sombreros Mexican Restaurant serves handcrafted, authentic Mexican food made fresh daily. View our menu, hours, location, and contact info.'
     },
+    food: {
+      title: 'Food | Sombreros Mexican Restaurant',
+      description: 'Explore handcrafted tacos, fajitas, and fresh Mexican dishes made daily at Sombreros Mexican Restaurant in Saginaw, MI.'
+    },
+    drinks: {
+      title: 'Drinks | Sombreros Mexican Restaurant',
+      description: 'Sip handcrafted margaritas, aguas frescas, horchata, and Mexican beers and cocktails at Sombreros Mexican Restaurant.'
+    },
+    events: {
+      title: 'Events & Catering | Sombreros Mexican Restaurant',
+      description: 'Host your next celebration, private party, or catering order with Sombreros Mexican Restaurant in Saginaw, MI.'
+    },
+    about: {
+      title: 'About Us | Sombreros Mexican Restaurant',
+      description: "Learn about Sombreros Mexican Restaurant's commitment to authentic, made-from-scratch Mexican cuisine and warm hospitality."
+    },
+    'order-online': {
+      title: 'Order Online | Sombreros Mexican Restaurant',
+      description: 'Order Sombreros Mexican Restaurant favorites for pickup or delivery through DoorDash or Grubhub.'
+    },
     menu: {
       title: 'Menu | Sombreros Mexican Restaurant',
       description: 'Browse the Sombreros Mexican Restaurant menu, featuring handcrafted, authentic Mexican dishes made fresh daily.'

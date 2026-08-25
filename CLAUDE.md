@@ -32,6 +32,13 @@ Every new feature or page added to this site must be vetted for SEO and accessib
 
 Treat this as a required step alongside mobile-first styling and specific naming — not an optional pass at the end.
 
+## Claude in Chrome Extension Usage
+Never assume it's okay to use the Claude in Chrome browser extension (navigating pages, clicking, filling forms, screenshots, reading console/network, etc.) without explicit permission first.
+
+- Before invoking any Chrome extension tool, explain in detail: exactly what the purpose is (why the browser is needed), and exactly what the plan is (which site/page, what actions will be taken, in what order).
+- Wait for explicit user confirmation before proceeding — do not treat silence or an unrelated "yes" elsewhere in the conversation as approval.
+- This applies every time the extension would be used, not just the first time in a session.
+
 ## Clarifying Questions on Vague Prompts
 When a prompt is vague or could reasonably be interpreted multiple ways, ask a clarifying question before implementing — don't guess and build the wrong thing.
 

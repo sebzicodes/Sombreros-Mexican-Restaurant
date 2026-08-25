@@ -218,19 +218,19 @@ body.sombreros-no-scroll {
   color: #555;
 }
 
-/* --- Home Page Sections: Food / Drinks / Events / About / Order Online --- */
+/* --- Home Page: Section Overviews --- */
 
-.sombreros-home-section {
-  padding: 2.5rem 15%;
+.sombreros-home-overview-section {
+  padding: 2.5rem 1.5rem;
   text-align: center;
 }
 
-#sombreros-drinks-section,
-#sombreros-about-section {
+.sombreros-home-overview-section--drinks,
+.sombreros-home-overview-section--about {
   background-color: #fafafa;
 }
 
-.sombreros-home-section-heading {
+.sombreros-home-overview-heading {
   font-size: 1.5rem;
   color: #8b0000;
   margin: 0 auto 1rem;
@@ -239,13 +239,74 @@ body.sombreros-no-scroll {
   padding-bottom: 0.25rem;
 }
 
-.sombreros-home-section-intro {
+.sombreros-home-overview-intro {
+  color: #444;
+  max-width: 60ch;
+  margin: 0 auto 1.5rem;
+}
+
+.sombreros-home-overview-cta {
+  display: inline-block;
+  background-color: #8b0000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sombreros-home-overview-cta:hover,
+.sombreros-home-overview-cta:focus-visible {
+  background-color: #6b0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.sombreros-home-overview-cta:focus-visible {
+  outline: 3px solid #8b0000;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sombreros-home-overview-cta {
+    transition: none;
+  }
+
+  .sombreros-home-overview-cta:hover,
+  .sombreros-home-overview-cta:focus-visible {
+    transform: none;
+  }
+}
+
+/* --- Content Pages: Food / Drinks / Events / About / Order Online --- */
+
+.sombreros-content-page {
+  padding: 2.5rem 15%;
+  text-align: center;
+}
+
+#sombreros-page-drinks,
+#sombreros-page-about {
+  background-color: #fafafa;
+}
+
+.sombreros-content-page-heading {
+  font-size: 1.5rem;
+  color: #8b0000;
+  margin: 0 auto 1rem;
+  width: fit-content;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 0.25rem;
+}
+
+.sombreros-content-page-intro {
   color: #444;
   max-width: 60ch;
   margin: 0 auto;
 }
 
-.sombreros-home-section-intro a {
+.sombreros-content-page-intro a {
   color: #8b0000;
   font-weight: bold;
 }
@@ -502,6 +563,44 @@ body.sombreros-no-scroll {
   outline-offset: 3px;
 }
 
+#sombreros-footer-hours {
+  margin-bottom: 1.25rem;
+}
+
+#sombreros-footer-hours-table {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+#sombreros-footer-hours-table th,
+#sombreros-footer-hours-table td {
+  padding: 0.2rem 0.5rem;
+  font-weight: normal;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+#sombreros-footer-hours-table th {
+  text-align: left;
+  color: #f5e6c8;
+  font-weight: bold;
+}
+
+#sombreros-footer-hours-table td {
+  text-align: right;
+  color: #aaa;
+}
+
+#sombreros-footer-invitation {
+  max-width: 32rem;
+  margin: 0 auto 1.25rem;
+  font-style: italic;
+  color: #f5e6c8;
+  line-height: 1.5;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sombreros-footer-social-link,
   .sombreros-footer-social-tooltip {
@@ -544,11 +643,19 @@ body.sombreros-no-scroll {
     font-size: 1.15rem;
   }
 
-  .sombreros-home-section {
+  .sombreros-home-overview-section {
     padding: 3.5rem 15%;
   }
 
-  .sombreros-home-section-intro {
+  .sombreros-home-overview-intro {
+    font-size: 1.05rem;
+  }
+
+  .sombreros-content-page {
+    padding: 3.5rem 15%;
+  }
+
+  .sombreros-content-page-intro {
     font-size: 1.05rem;
   }
 
@@ -568,6 +675,15 @@ body.sombreros-no-scroll {
   .sombreros-footer-social-link {
     width: 52px;
     height: 52px;
+  }
+
+  #sombreros-footer-hours-table th,
+  #sombreros-footer-hours-table td {
+    font-size: 0.9rem;
+  }
+
+  #sombreros-footer-invitation {
+    font-size: 1rem;
   }
 }
 
@@ -594,7 +710,11 @@ body.sombreros-no-scroll {
     padding: 4rem 6rem;
   }
 
-  .sombreros-home-section {
+  .sombreros-home-overview-section {
+    padding: 4.5rem 15%;
+  }
+
+  .sombreros-content-page {
     padding: 4.5rem 15%;
   }
 
