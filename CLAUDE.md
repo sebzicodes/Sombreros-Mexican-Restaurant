@@ -31,3 +31,11 @@ Every new feature or page added to this site must be vetted for SEO and accessib
 - Motion/animation respects `prefers-reduced-motion`.
 
 Treat this as a required step alongside mobile-first styling and specific naming — not an optional pass at the end.
+
+## Clarifying Questions on Vague Prompts
+When a prompt is vague or could reasonably be interpreted multiple ways, ask a clarifying question before implementing — don't guess and build the wrong thing.
+
+- If a request has one intuitive, obvious interpretation given the existing codebase and context, proceed without asking — don't interrupt for things that aren't actually ambiguous.
+- If a request could go multiple distinct directions (different layouts, different scope, different content/copy, different behavior) and the choice would meaningfully change what gets built, ask about that specific decision before starting.
+- Only ask about the parts that are genuinely ambiguous. Don't turn one unclear detail into a checklist of unrelated questions.
+- Prefer asking a targeted question (e.g. via AskUserQuestion with concrete options) over a generic "can you clarify?"
