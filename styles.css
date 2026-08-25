@@ -218,6 +218,112 @@ body.sombreros-no-scroll {
   color: #555;
 }
 
+/* --- Home Page Sections: Food / Drinks / Events / About / Order Online --- */
+
+.sombreros-home-section {
+  padding: 2.5rem 1.5rem;
+}
+
+#sombreros-drinks-section,
+#sombreros-about-section {
+  background-color: #fafafa;
+}
+
+.sombreros-home-section-heading {
+  font-size: 1.5rem;
+  color: #8b0000;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 0.25rem;
+}
+
+.sombreros-home-section-intro {
+  color: #444;
+  max-width: 60ch;
+}
+
+.sombreros-home-section-intro a {
+  color: #8b0000;
+  font-weight: bold;
+}
+
+/* --- Order Online: circular icon link buttons --- */
+
+#sombreros-order-online-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+}
+
+.sombreros-order-online-item {
+  flex: 0 1 auto;
+}
+
+.sombreros-order-online-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 96px;
+  text-decoration: none;
+  color: #222;
+  border-radius: 8px;
+}
+
+.sombreros-order-online-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+
+.sombreros-order-online-link:hover .sombreros-order-online-icon {
+  transform: scale(1.06);
+}
+
+.sombreros-order-online-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sombreros-order-online-link--yelp .sombreros-order-online-icon {
+  background-color: #d32323;
+}
+
+.sombreros-order-online-link--doordash .sombreros-order-online-icon {
+  background-color: #ff3008;
+}
+
+.sombreros-order-online-link--facebook .sombreros-order-online-icon {
+  background-color: #1877f2;
+}
+
+.sombreros-order-online-link--grubhub .sombreros-order-online-icon {
+  background-color: #f63440;
+}
+
+.sombreros-order-online-link:focus-visible {
+  outline: 3px solid #8b0000;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sombreros-order-online-icon {
+    transition: none;
+  }
+
+  .sombreros-order-online-link:hover .sombreros-order-online-icon {
+    transform: none;
+  }
+}
+
 /* --- Shared "Page" Styles --- */
 
 #sombreros-page-menu,
@@ -264,6 +370,23 @@ body.sombreros-no-scroll {
   #sombreros-hero-subheading {
     font-size: 1.15rem;
   }
+
+  .sombreros-home-section {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .sombreros-home-section-intro {
+    font-size: 1.05rem;
+  }
+
+  .sombreros-order-online-icon {
+    width: 84px;
+    height: 84px;
+  }
+
+  .sombreros-order-online-link {
+    width: 108px;
+  }
 }
 
 /* =============================================
@@ -287,5 +410,23 @@ body.sombreros-no-scroll {
   #sombreros-page-hours,
   #sombreros-page-contact {
     padding: 4rem 6rem;
+  }
+
+  .sombreros-home-section {
+    padding: 4.5rem 6rem;
+  }
+
+  #sombreros-order-online-list {
+    gap: 2.5rem;
+  }
+
+  .sombreros-order-online-icon {
+    width: 96px;
+    height: 96px;
+  }
+
+  .sombreros-order-online-svg {
+    width: 44px;
+    height: 44px;
   }
 }
