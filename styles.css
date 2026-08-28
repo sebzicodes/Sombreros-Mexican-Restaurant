@@ -18,6 +18,8 @@
   --sombreros-color-gold-bright: #e0c37a;
   --sombreros-color-ivory: #ece0c8;
   --sombreros-color-muted: #b7a58a;
+  --sombreros-color-ember: #5a1f0f;
+  --sombreros-header-height: 56px;
 }
 
 body {
@@ -209,9 +211,17 @@ body.sombreros-no-scroll {
 /* --- Hero Banner --- */
 
 #sombreros-hero-banner {
-  background-color: var(--sombreros-color-obsidian);
+  background-color: var(--sombreros-color-ember);
   text-align: center;
-  padding: 3rem 15%;
+  padding: 2rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  height: calc(100vh - var(--sombreros-header-height));
+  height: calc(100dvh - var(--sombreros-header-height));
+  overflow: hidden;
 }
 
 #sombreros-hero-heading {
@@ -227,6 +237,64 @@ body.sombreros-no-scroll {
 #sombreros-hero-subheading {
   font-size: 1rem;
   color: var(--sombreros-color-muted);
+}
+
+#sombreros-hero-photo-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  min-height: 0;
+}
+
+#sombreros-hero-photo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 38vh;
+  max-height: 38dvh;
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+}
+
+.sombreros-hero-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  display: inline-block;
+  background-color: var(--sombreros-color-gold-bright);
+  color: var(--sombreros-color-void);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sombreros-hero-cta:hover,
+.sombreros-hero-cta:focus-visible {
+  background-color: var(--sombreros-color-gold);
+  transform: translate(-50%, -2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
+}
+
+.sombreros-hero-cta:focus-visible {
+  outline: 3px solid var(--sombreros-color-ivory);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sombreros-hero-cta {
+    transition: none;
+  }
+
+  .sombreros-hero-cta:hover,
+  .sombreros-hero-cta:focus-visible {
+    transform: translateX(-50%);
+  }
 }
 
 /* --- Home Page: Section Overviews --- */
@@ -654,6 +722,20 @@ body.sombreros-no-scroll {
     font-size: 1.15rem;
   }
 
+  #sombreros-hero-banner {
+    padding: 2.5rem 1rem;
+  }
+
+  #sombreros-hero-photo {
+    max-height: 42vh;
+    max-height: 42dvh;
+  }
+
+  .sombreros-hero-cta {
+    font-size: 1.05rem;
+    padding: 1rem 2.25rem;
+  }
+
   .sombreros-home-overview-section {
     padding: 3.5rem 15%;
   }
@@ -708,11 +790,21 @@ body.sombreros-no-scroll {
   }
 
   #sombreros-hero-banner {
-    padding: 5rem 15%;
+    padding: 3rem 2rem;
   }
 
   #sombreros-hero-heading {
     font-size: 3.5rem;
+  }
+
+  #sombreros-hero-photo {
+    max-height: 48vh;
+    max-height: 48dvh;
+  }
+
+  .sombreros-hero-cta {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
   }
 
   #sombreros-page-menu,
