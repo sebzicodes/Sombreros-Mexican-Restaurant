@@ -268,13 +268,21 @@ body.sombreros-no-scroll {
 #sombreros-hero-photo-frame {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sombreros-color-wine-deep);
 }
 
 #sombreros-hero-photo {
   display: block;
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  border: 3px solid var(--sombreros-color-gold);
 }
 
 .sombreros-hero-cta {
@@ -313,11 +321,32 @@ body.sombreros-no-scroll {
   }
 }
 
+/* --- Home Page: Parallax Photo Dividers --- */
+
+.sombreros-parallax-divider {
+  height: 75vh;
+  box-sizing: border-box;
+  background-color: var(--sombreros-color-obsidian);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  border-top: 3px solid var(--sombreros-color-gold-bright);
+  border-bottom: 3px solid var(--sombreros-color-gold-bright);
+}
+
 /* --- Home Page: Section Overviews --- */
 
 .sombreros-home-overview-section {
+  min-height: 100vh;
+  min-height: 100dvh;
   padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .sombreros-home-overview-section--drinks,
@@ -742,6 +771,10 @@ body.sombreros-no-scroll {
     padding: 1.5rem 1rem;
   }
 
+  #sombreros-hero-photo {
+    border-width: 5px;
+  }
+
   .sombreros-hero-cta {
     font-size: 1.05rem;
     padding: 1rem 2.25rem;
@@ -753,6 +786,12 @@ body.sombreros-no-scroll {
 
   .sombreros-home-overview-intro {
     font-size: 1.05rem;
+  }
+
+  .sombreros-parallax-divider {
+    height: 75vh;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
   }
 
   .sombreros-content-page {
@@ -812,6 +851,10 @@ body.sombreros-no-scroll {
     font-size: 1.15rem;
   }
 
+  #sombreros-hero-photo {
+    border-width: 6px;
+  }
+
   .sombreros-hero-cta {
     font-size: 1.1rem;
     padding: 1rem 2.5rem;
@@ -831,6 +874,13 @@ body.sombreros-no-scroll {
     padding: 4.5rem 15%;
   }
 
+  .sombreros-parallax-divider {
+    height: 75vh;
+    background-attachment: fixed;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+  }
+
   #sombreros-order-online-list {
     gap: 2.5rem;
   }
@@ -843,5 +893,12 @@ body.sombreros-no-scroll {
   .sombreros-order-online-svg {
     width: 44px;
     height: 44px;
+  }
+}
+
+/* Placed after all breakpoints so it wins the cascade at every viewport width */
+@media (prefers-reduced-motion: reduce) {
+  .sombreros-parallax-divider {
+    background-attachment: scroll;
   }
 }
