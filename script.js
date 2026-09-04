@@ -22,6 +22,10 @@
       title: 'Events & Catering | Sombreros Mexican Restaurant',
       description: 'Host your next celebration, private party, or catering order with Sombreros Mexican Restaurant in Saginaw, MI.'
     },
+    catering: {
+      title: 'Catering | Sombreros Mexican Restaurant',
+      description: 'Sombreros Mexican Restaurant caters taco bars, fajita trays, and full spreads of authentic Mexican food for any group size in Saginaw, MI.'
+    },
     about: {
       title: 'About Us | Sombreros Mexican Restaurant',
       description: "Learn about Sombreros Mexican Restaurant's commitment to authentic, made-from-scratch Mexican cuisine and warm hospitality."
@@ -187,6 +191,64 @@
   sombrerosSideNavOverlay.addEventListener('click', function () {
     sombrerosCloseSideNav({ restoreFocus: true });
   });
+
+  // --- Home Page: Parallax Photo Dividers ---------------------------------
+
+  var sombrerosParallaxDividers = Array.prototype.slice.call(
+    document.querySelectorAll('.sombreros-parallax-divider')
+  );
+
+  if (sombrerosParallaxDividers.length && !sombrerosPrefersReducedMotion() && 'IntersectionObserver' in window) {
+    var sombrerosParallaxFactor = 0.35;
+    var sombrerosParallaxTicking = false;
+    var sombrerosParallaxVisible = [];
+
+    var sombrerosParallaxObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var index = sombrerosParallaxVisible.indexOf(entry.target);
+          if (entry.isIntersecting) {
+            if (index === -1) sombrerosParallaxVisible.push(entry.target);
+          } else if (index !== -1) {
+            sombrerosParallaxVisible.splice(index, 1);
+          }
+        });
+        sombrerosRequestParallaxUpdate();
+      },
+      { rootMargin: '25% 0px' }
+    );
+
+    sombrerosParallaxDividers.forEach(function (divider) {
+      sombrerosParallaxObserver.observe(divider);
+    });
+
+    function sombrerosUpdateParallax() {
+      sombrerosParallaxTicking = false;
+      var viewportCenter = window.innerHeight / 2;
+
+      sombrerosParallaxVisible.forEach(function (divider) {
+        var layer = divider.querySelector('.sombreros-parallax-divider-layer');
+        if (!layer) return;
+        var rect = divider.getBoundingClientRect();
+        var dividerCenter = rect.top + rect.height / 2;
+        var distance = viewportCenter - dividerCenter;
+        var maxOffset = rect.height * 0.18;
+        var offset = Math.max(-maxOffset, Math.min(maxOffset, distance * sombrerosParallaxFactor));
+        layer.style.transform = 'translate3d(0, ' + offset.toFixed(1) + 'px, 0)';
+      });
+    }
+
+    function sombrerosRequestParallaxUpdate() {
+      if (!sombrerosParallaxTicking) {
+        sombrerosParallaxTicking = true;
+        window.requestAnimationFrame(sombrerosUpdateParallax);
+      }
+    }
+
+    window.addEventListener('scroll', sombrerosRequestParallaxUpdate, { passive: true });
+    window.addEventListener('resize', sombrerosRequestParallaxUpdate);
+    sombrerosUpdateParallax();
+  }
 
   // --- Init ---------------------------------------------------------------
 

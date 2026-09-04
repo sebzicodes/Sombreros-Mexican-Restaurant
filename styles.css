@@ -324,15 +324,41 @@ body.sombreros-no-scroll {
 /* --- Home Page: Parallax Photo Dividers --- */
 
 .sombreros-parallax-divider {
+  position: relative;
   height: 75vh;
+  overflow: hidden;
   box-sizing: border-box;
   background-color: var(--sombreros-color-obsidian);
+  border-top: 3px solid var(--sombreros-color-gold-bright);
+  border-bottom: 3px solid var(--sombreros-color-gold-bright);
+}
+
+.sombreros-parallax-divider-layer {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: scroll;
-  border-top: 3px solid var(--sombreros-color-gold-bright);
-  border-bottom: 3px solid var(--sombreros-color-gold-bright);
+  will-change: transform;
+}
+
+/* First in-between photo (hero -> food): 10% shorter overall, split evenly
+   as a 5% margin above and 5% below so the photo sits with breathing room
+   instead of butting against the hero and the food overview section. */
+#sombreros-parallax-hero-food {
+  height: 67.5vh;
+  margin-top: 3.75vh;
+  margin-bottom: 3.75vh;
+}
+
+/* The source photo crops tightly on cover; anchoring near the top of the
+   frame keeps people's faces in view instead of cropping down to their
+   chests. */
+#sombreros-parallax-hero-food .sombreros-parallax-divider-layer {
+  background-position: center 15%;
 }
 
 /* --- Home Page: Section Overviews --- */
@@ -352,6 +378,10 @@ body.sombreros-no-scroll {
 .sombreros-home-overview-section--drinks,
 .sombreros-home-overview-section--about {
   background-color: var(--sombreros-color-obsidian);
+}
+
+.sombreros-home-overview-section--catering {
+  background-color: var(--sombreros-color-wine-deep);
 }
 
 .sombreros-home-overview-heading {
@@ -876,7 +906,6 @@ body.sombreros-no-scroll {
 
   .sombreros-parallax-divider {
     height: 75vh;
-    background-attachment: fixed;
     border-top-width: 5px;
     border-bottom-width: 5px;
   }
@@ -896,9 +925,11 @@ body.sombreros-no-scroll {
   }
 }
 
-/* Placed after all breakpoints so it wins the cascade at every viewport width */
+/* Placed after all breakpoints so it wins the cascade at every viewport width.
+   The parallax translation is applied in JS and skipped entirely when this
+   query matches, leaving the divider layer as a normal static cover photo. */
 @media (prefers-reduced-motion: reduce) {
-  .sombreros-parallax-divider {
-    background-attachment: scroll;
+  .sombreros-parallax-divider-layer {
+    transform: none !important;
   }
 }
